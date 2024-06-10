@@ -1,9 +1,12 @@
+import React from 'react';
 import './App.css';
+import InputSection from './components/InputSection';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-     <h1>Hello Hyderabad</h1>
+    <span className="heading">Todo List</span>
+    <InputSection/>
     </div>
   );
 }
