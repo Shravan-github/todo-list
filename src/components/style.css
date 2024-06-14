@@ -1,8 +1,7 @@
 .input {
     display: flex;
-    width: 90%;
     position: relative;
-    align-items: center;
+   
 }
 
 .input_box{
@@ -16,7 +15,7 @@
 }
 
 .input_box:focus{
-    box-shadow: 0 0 10px 1000px rgb(252, 182, 3);
+    box-shadow: 0 0 10px 1000px rgb(13, 145, 246);
     outline: none;
 }
 
@@ -43,4 +42,61 @@ box-shadow: 0 0 10px rgb(73, 235, 3);
 .submit:active{
     transform: scale(0.8);
     box-shadow: 0 0 5px black;
+}
+
+.todos{
+    display:"flex";
+    justify-content: space-evenly;
+    text-align: center;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.todos-single-text:focus{
+    outline: none;
+}
+
+.todos-single-text{
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+}
+
+.todos__single{
+    display: flex;
+    width: 25%;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 15px;
+    background-image: url("https://img.freepik.com/premium-photo/grunge-background_196038-13455.jpg?w=740");
+}
+
+
+.icon{
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media(max-width: 700px){
+    .todos__single{
+        width: 40%;
+    }
+}
+
+
+@media(max-width: 700px){
+    .input{
+        width: 95%;
+
+    }
+    .todos{
+        width: 95%;
+
+    }
+    .todos__single{
+        width: 100%;
+
+    }
 }

@@ -15,7 +15,7 @@ const inputRef = useRef<HTMLInputElement>(null);
         <form className='input' 
         onSubmit={(e)=>{
           handleAdd(e)
-          inputRef.current?.blur();
+          inputRef.current?.blur()
         }}>
             <input
             ref={inputRef}
