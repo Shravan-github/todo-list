@@ -10,6 +10,7 @@ type Props = {
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 };
+
 const SingleTodo = ({ todo, todos, setTodos }: Props) => {
   const [edit, setEdit] = useState<boolean>(false);
   const [editTodo, setEditTodo] = useState<string>(todo.todo);
@@ -28,7 +29,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
   };
 
   const handleDelete = (id: Number) => {
-    setTodos(todos.filter((todo) => todo.id! == id));
+    setTodos(todos.filter((todo) => todo.id  !== id));
   };
 
   const handleEdit = (e: React.FormEvent, id: Number) => {
@@ -59,33 +60,34 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
       ) : (
         <span className="todos-single-text">{todo.todo}</span>
       )}
-
-      <span
-        className="icon"
-        onClick={() => {
-          if (!edit && !todo.isDone) {
-            setEdit(!edit);
-          }
-        }}
-      >
-        <AiFillEdit />
-      </span>
-      <span
-        className="icon"
-        onClick={() => {
-          handleDelete(todo.id);
-        }}
-      >
-        <MdDelete />
-      </span>
-      <span
-        className="icon"
-        onClick={() => {
-          handleDone(todo.id);
-        }}
-      >
-        <MdCloudDone />
-      </span>
+      <div>
+        <span
+          className="icon"
+          onClick={() => {
+            if (!edit && !todo.isDone) {
+              setEdit(!edit);
+            }
+          }}
+        >
+          <AiFillEdit />
+        </span>
+        <span
+          className="icon"
+          onClick={() => {
+            handleDelete(todo.id);
+          }}
+        >
+          <MdDelete />
+        </span>
+        <span
+          className="icon"
+          onClick={() => {
+            handleDone(todo.id);
+          }}
+        >
+          <MdCloudDone />
+        </span>
+      </div>
     </form>
   );
 };
